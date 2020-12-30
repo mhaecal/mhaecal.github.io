@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Rebuilding Invictus.co.id bye @mhaecal</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/1365/9355/files/favicon_32x32.png?v=1484204318" type="image/png">
+
+	<!-- css -->
+	<link rel="stylesheet" href="/css/full.css" />
+
+	<!-- alpine -->
+	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine-ie11.min.js" defer></script>
+</head>
+<body x-data="{open: false, dropdown: false}">
+	<!-- <div class="flex"> -->
+
+		<!-- sidebar -->
+		<aside class="bg-white min-h-screen fixed w-72" x-show.transition.duration.300="open">
+			<div class="py-4 bg-gray-100">
+				<input type="text" placeholder="Search" class="border block mx-auto pl-1 w-48">
+				<button
+					@click="open = false"
+					class="absolute top-3 right-4 text-3xl font-bold text-gray-400 focus:outline-none">
+						&times;
+				</button>
+			</div>
+			<nav class="cursor-pointer">
+				<ul>
+					<li class="pl-3 border-b border-t text-sm">
+						<a href="#" class="flex justify-between items-center">
+							Tshirt
+							<button class="border-l p-3">
+								<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+								  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+								</svg>
+							</button>
+						</a>
+					</li>
+					<li class="py-4 pl-3 border-b border-t text-sm">
+						<a href="#">Bag</a>
+					</li>
+					<li class="py-4 pl-3 border-b border-t text-sm">
+						<a href="#">Scrabble Series</a>
+					</li>
+					<li class="py-4 pl-3 border-b border-t text-sm">
+						<a href="#">Accs</a>
+					</li>
+					<li class="py-4 pl-3 border-b border-t text-sm">
+						<a href="#">Jamaica Cafe</a>
+					</li>
+					<li class="py-4 pl-3 border-b border-t text-sm">
+						<a href="#">Log in</a>
+					</li>
+					<li class="py-4 pl-3 border-b border-t text-sm">
+						<a href="#">Create Account</a>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div :class="{ 'ml-72 w-full': open == true }">
+			<header class="bg-red-600 text-center text-white py-3 font-thin text-sm hover:underline">
+				<a href="#">Buy 1 Get 1 for Normal Pricel! Please check when you checkout!</a>
+			</header>
+
+			<!-- px-3 -->
+			<div class="px-3 md:px-0 mb-auto"> 
+
+				<div class="hidden text-sm md:flex uppercase items-center justify-between text-gray-500 px-8 pt-5">
+					<div class="inline-flex items-center space-x-8 ">
+						<a href="#">About Us</a>
+						<a href="#">Contact</a>
+					</div>
+					<div class="inline-flex items-center space-x-8">
+						<a href="#">Login/Register</a>
+						<a href="#">
+							<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+							</svg>
+						</a>
+						<a href="#">
+							<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+							  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- navbar -->
+				<nav class="flex items-center justify-between py-4 md:py-0">
+					<!-- humberger menu -->
+					<div class="text-gray-500 md:invisible" @click="open = !open">
+						<button type="button" class="block focus:outline-none">
+							<svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+
+					<!-- nav brand -->
+					<div>
+						<img class="h-7" src="https://cdn.shopify.com/s/files/1/1365/9355/files/logo-invictus_170x.png?v=1484200849" alt="invictus logo">
+					</div>
+
+					<!-- cart icon -->
+					<div class="text-gray-500 md:invisible">
+						<button type="button" class="block focus:outline-none">
+							<svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+							  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+							</svg>
+						</button>
+					</div>
+				</nav>
+
+				<!-- md menu -->
+				<div class="hidden md:flex justify-center items-center space-x-8 mt-8 border-t border-b border-gray-400 py-4 uppercase text-sm text-gray-500">
+					<div>
+						<a href="#" class="inline-flex items-center">
+							Tshirt
+							<svg class="h-3 w-3 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</a>
+					</div>
+					<div>
+						<a href="#">Bag</a>
+					</div>
+					<div>
+						<a href="#">Scrabble Series</a>
+					</div>
+					<div>
+						<a href="#">Accs</a>
+					</div>
+					<div>
+						<a href="#">Jamaica Cafe</a>
+					</div>
+				</div>
+
+				<div class="md:px-20 md:container md:mx-auto px-0">
+
+					<!-- breadcrumb -->
+					<div class="py-5 flex items-center text-xs text-gray-600">
+						<div>
+							<a class="hover:underline" href="#">Home</a>
+							<span class="px-2" style="font-size: 8px"> > </span>
+							<a class="hover:underline" href="#">Spently - Recommended Products</a>
+							<span class="px-2" style="font-size: 8px"> > </span>
+							<a class="hover:underline text-gray-400" href="#">Baju Kuliah</a>
+						</div>
+					</div>
+
+					<!-- flexbox -->
+					<div class="lg:flex lg:space-x-10">
+
+						<!-- product image -->
+						<div id="product-image" class="lg:w-7/12">
+							<!-- sale -->
+							<div class="py-2">
+								<span class="bg-red-600 uppercase py-2 px-5 text-xs text-white">sale</span>
+							</div>
+
+							<!-- product -->
+							<div class="mb-3">
+								<img class="w-full" src="https://cdn.shopify.com/s/files/1/1365/9355/products/Bajukuliah_grande.jpg?v=1596109140" alt="baju kuliah">
+							</div>
+						</div> <!-- product image -->
+
+						<!-- product detail -->
+						<div id="product-detail" class="lg:w-5/12">
+							<!-- product title -->
+							<div class="pb-7">
+								<h1 class="text-gray-500 text-4xl">Baju Kuliah</h1>
+							</div>
+
+							<!-- product price -->
+							<div class="text-gray-500 pb-7">
+								<h5 class="text-md font-thin line-through">149.000,00</h5>
+								<h3 class="text-2xl">59.600,00</h3>
+							</div>
+
+							<div class="md:flex md:space-x-5">
+								<!-- size -->
+								<div class="mb-3 md:w-1/2">
+									<label class="text-xs uppercase text-gray-500 pb-2" for="size">Size</label>
+									<select name="size" id="size" class="w-full text-xs border text-gray-500 bg-white px-3 py-2 md:py-3 outline-none">
+										<option>S</option>
+										<option selected>M</option>
+										<option>L</option>
+										<option>XL</option>
+										<option>XXL</option>
+									</select>
+								</div>
+
+								<!-- quantity -->
+								<div class="mb-5 md:w-1/2">
+									<label class="text-xs uppercase text-gray-500 pb-2" for="size">Quantity</label>
+									<input class="w-full text-xs px-4 py-2 md:py-3 border text-gray-500 focus:outline-none focus:border-green-500" type="number" name="quantity" id="quantity" value="1" />
+								</div>
+							</div>
+
+							<!-- send to messanger -->
+							<div class="border border-gray-300 text-sm p-5 mb-7">
+								<p class="text-gray-500 pb-2">Yes! I'd like to receive updates and special promotions for this and other products.</p>
+								<div class="flex items-center">
+									<input type="checkbox" name="check" id="check" class="h-3 w-3 text-gray-700 border rounded mr-2" />
+									<label class="flex items-center space-x-2" for="check">
+										<span>Send to</span>
+										<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" class="_7o43" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><path d="M0,7.48603658 C0,3.35089256 3.582697,0 8,0 C12.417303,
+											0 16,3.35089256 16,7.48603658 C16,11.6211806 12.417303,
+											14.9720732 8,14.9720732 C7.2,14.9720732 6.430534,
+											14.8620743 5.701781,14.6583726 L2.782609,16 L2.782609,
+											13.2173913 C0.979717,11.8417883 0,9.83879093 0,7.48603658 Z" id="bubble" fill="#0A7CFF" fill-rule="nonzero"></path><polygon fill="#FFFFFF" points="6.77106 7.87975543 8.84375 10.0319293 13.217391 5.39130435
+											9.226902 7.59850543 7.15625 5.44633152 2.782609 10.0869565"></polygon></g></g></svg>
+										<span>Messanger</span>
+									</label>
+								</div>
+							</div>
+
+							<!-- add to cart -->
+							<div class="mb-8">
+								<button class="w-full py-2 bg-red-600 text-white">Add to Cart</button>
+							</div>
+
+							<div class="mb-8">
+								<p class="text-gray-500 text-sm">Regular Invictus tshirt made from 30s Cotton. Mixed printing Water based and Oil based. Do not iron on printing.</p>
+							</div>
+
+							<!-- social media share -->
+							<div class="flex items-center space-x-3 mb-10">
+								<button type="button" class="flex text-xs font-bold items-center bg-blue-800 hover:bg-blue-900 text-white px-2 py-1 rounded">
+									<svg class="svg-icon h-4 w-4" viewBox="0 0 20 20"><path fill="currentColor" d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z"></path></svg>
+									<span>Share</span>
+								</button>
+								<button type="button" class="flex text-xs font-bold items-center bg-blue-400 hover:bg-blue-600 text-white px-2 py-1 rounded">
+									<svg class="svg-icon h-4 w-4" viewBox="0 0 20 20">
+										<path fill="currentColor" d="M18.258,3.266c-0.693,0.405-1.46,0.698-2.277,0.857c-0.653-0.686-1.586-1.115-2.618-1.115c-1.98,0-3.586,1.581-3.586,3.53c0,0.276,0.031,0.545,0.092,0.805C6.888,7.195,4.245,5.79,2.476,3.654C2.167,4.176,1.99,4.781,1.99,5.429c0,1.224,0.633,2.305,1.596,2.938C2.999,8.349,2.445,8.19,1.961,7.925C1.96,7.94,1.96,7.954,1.96,7.97c0,1.71,1.237,3.138,2.877,3.462c-0.301,0.08-0.617,0.123-0.945,0.123c-0.23,0-0.456-0.021-0.674-0.062c0.456,1.402,1.781,2.422,3.35,2.451c-1.228,0.947-2.773,1.512-4.454,1.512c-0.291,0-0.575-0.016-0.855-0.049c1.588,1,3.473,1.586,5.498,1.586c6.598,0,10.205-5.379,10.205-10.045c0-0.153-0.003-0.305-0.01-0.456c0.7-0.499,1.308-1.12,1.789-1.827c-0.644,0.28-1.334,0.469-2.06,0.555C17.422,4.782,17.99,4.091,18.258,3.266"></path>
+									</svg>
+									<span>Tweet</span>
+								</button>
+								<button type="button" class="flex text-xs font-bold items-center bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded">
+									<svg class="svg-icon h-4 w-4" viewBox="0 0 20 20"><path fill="currentColor" d="M9.797,2.214C9.466,2.256,9.134,2.297,8.802,2.338C8.178,2.493,7.498,2.64,6.993,2.935C5.646,3.723,4.712,4.643,4.087,6.139C3.985,6.381,3.982,6.615,3.909,6.884c-0.48,1.744,0.37,3.548,1.402,4.173c0.198,0.119,0.649,0.332,0.815,0.049c0.092-0.156,0.071-0.364,0.128-0.546c0.037-0.12,0.154-0.347,0.127-0.496c-0.046-0.255-0.319-0.416-0.434-0.62C5.715,9.027,5.703,8.658,5.59,8.101c0.009-0.075,0.017-0.149,0.026-0.224C5.65,7.254,5.755,6.805,5.948,6.362c0.564-1.301,1.47-2.025,2.931-2.458c0.327-0.097,1.25-0.252,1.734-0.149c0.289,0.05,0.577,0.099,0.866,0.149c1.048,0.33,1.811,0.938,2.218,1.888c0.256,0.591,0.33,1.725,0.154,2.483c-0.085,0.36-0.072,0.667-0.179,0.993c-0.397,1.206-0.979,2.323-2.295,2.633c-0.868,0.205-1.519-0.324-1.733-0.869c-0.06-0.151-0.161-0.418-0.101-0.671c0.229-0.978,0.56-1.854,0.815-2.831c0.243-0.931-0.218-1.665-0.943-1.837C8.513,5.478,7.816,6.312,7.579,6.858C7.39,7.292,7.276,8.093,7.426,8.672c0.047,0.183,0.269,0.674,0.23,0.844c-0.174,0.755-0.372,1.568-0.587,2.31c-0.223,0.771-0.344,1.562-0.56,2.311c-0.1,0.342-0.096,0.709-0.179,1.066v0.521c-0.075,0.33-0.019,0.916,0.051,1.242c0.045,0.209-0.027,0.467,0.076,0.621c0.002,0.111,0.017,0.135,0.052,0.199c0.319-0.01,0.758-0.848,0.917-1.094c0.304-0.467,0.584-0.967,0.816-1.514c0.208-0.494,0.241-1.039,0.408-1.566c0.12-0.379,0.292-0.824,0.331-1.24h0.025c0.066,0.229,0.306,0.395,0.485,0.52c0.56,0.4,1.525,0.77,2.573,0.523c1.188-0.281,2.133-0.838,2.755-1.664c0.457-0.609,0.804-1.313,1.07-2.112c0.131-0.392,0.158-0.826,0.256-1.241c0.241-1.043-0.082-2.298-0.384-2.981C14.847,3.35,12.902,2.17,9.797,2.214"></path></svg>
+									<span>Pin it</span>
+								</button>
+							</div>
+
+							<!-- customer review -->
+							<div class="border border-gray-300 text-center px-4 py-6 md:text-left md:flex md:justify-between md:items-end">
+								<div>
+									<h1 class="text-2xl text-gray-500">Customer Reviews</h1>
+									<p class="text-sm leading-8 text-gray-400">No reviews yet</p>
+								</div>
+								<div>
+									<a href="#" class="text-sm text-gray-600">Write a review</a>
+								</div>
+							</div>
+						</div> <!-- .product detail -->
+					</div> <!-- .flexbox --> 
+
+					<!-- footer -->
+					<footer>
+						<div class="pt-16 text-gray-500 md:flex md:justify-center md:items-start">
+							<div class="text-center md:w-1/3">
+								<h3 class="uppercase text-xs pb-4">Information</h3>
+								<div class="underline leading-8 text-sm">
+									<a href="#" class="block">Marketplace</a>
+									<a href="#" class="block">SIZE CHART</a>
+									<a href="#" class="block">PRIVACY POLICY</a>
+									<a href="#" class="block">SHIPPING & RETURNS</a>
+								</div>
+							</div>
+							<div class="text-center mt-8 md:mt-0 md:w-1/3">
+								<h3 class="uppercase text-xs pb-4">Join our mailing list</h3>
+								<div class="text-sm">
+									<span>Subscribe to our newsletter and stay updated on the latest news and special offers from us.</span>
+								</div>
+								<div class="flex items-center justify-center mt-5">
+									<input type="email" name="email" id="email" placeholder="Enter email" />
+									<button type="submit">
+										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+									</button>
+								</div>
+							</div>
+							<div class="text-center mt-8 md:mt-0 md:w-1/3">
+								<h3 class="uppercase text-xs pb-4">Social networks</h3>
+								<div class="flex items-center justify-center space-x-5">
+									<div>
+										<a href="#" class="hover:text-gray-700">
+											<svg class="svg-icon h-8 w-8" viewBox="0 0 20 20">
+												<path fill="currentColor" d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z"></path>
+											</svg>
+										</a>
+									</div>
+									<div>
+										<a href="#" class="hover:text-gray-700">
+											<svg class="svg-icon h-8 w-8" viewBox="0 0 20 20">
+												<path fill="currentColor" d="M18.258,3.266c-0.693,0.405-1.46,0.698-2.277,0.857c-0.653-0.686-1.586-1.115-2.618-1.115c-1.98,0-3.586,1.581-3.586,3.53c0,0.276,0.031,0.545,0.092,0.805C6.888,7.195,4.245,5.79,2.476,3.654C2.167,4.176,1.99,4.781,1.99,5.429c0,1.224,0.633,2.305,1.596,2.938C2.999,8.349,2.445,8.19,1.961,7.925C1.96,7.94,1.96,7.954,1.96,7.97c0,1.71,1.237,3.138,2.877,3.462c-0.301,0.08-0.617,0.123-0.945,0.123c-0.23,0-0.456-0.021-0.674-0.062c0.456,1.402,1.781,2.422,3.35,2.451c-1.228,0.947-2.773,1.512-4.454,1.512c-0.291,0-0.575-0.016-0.855-0.049c1.588,1,3.473,1.586,5.498,1.586c6.598,0,10.205-5.379,10.205-10.045c0-0.153-0.003-0.305-0.01-0.456c0.7-0.499,1.308-1.12,1.789-1.827c-0.644,0.28-1.334,0.469-2.06,0.555C17.422,4.782,17.99,4.091,18.258,3.266"></path>
+											</svg>
+										</a>
+									</div>
+									<div>
+										<a href="#" class="hover:text-gray-700">
+											<svg class="svg-icon h-8 w-8" viewBox="0 0 20 20">
+												<path fill="currentColor" d="M14.52,2.469H5.482c-1.664,0-3.013,1.349-3.013,3.013v9.038c0,1.662,1.349,3.012,3.013,3.012h9.038c1.662,0,3.012-1.35,3.012-3.012V5.482C17.531,3.818,16.182,2.469,14.52,2.469 M13.012,4.729h2.26v2.259h-2.26V4.729z M10,6.988c1.664,0,3.012,1.349,3.012,3.012c0,1.664-1.348,3.013-3.012,3.013c-1.664,0-3.012-1.349-3.012-3.013C6.988,8.336,8.336,6.988,10,6.988 M16.025,14.52c0,0.831-0.676,1.506-1.506,1.506H5.482c-0.831,0-1.507-0.675-1.507-1.506V9.247h1.583C5.516,9.494,5.482,9.743,5.482,10c0,2.497,2.023,4.52,4.518,4.52c2.494,0,4.52-2.022,4.52-4.52c0-0.257-0.035-0.506-0.076-0.753h1.582V14.52z"></path>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="text-xs my-12 text-gray-500">
+							<span>&copy; 2017 - 
+								<a href="#" class="underline">www.invictus.co.id</a>
+							</span>
+						</div>
+					</footer>
+				</div> <!-- .container -->
+			</div> <!-- .px-3 -->
+		</div>
+</body>
+</html>
